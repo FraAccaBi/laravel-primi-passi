@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/about-me', function () {
+    $name = 'Fra';
+    $job = 'Junior web dev';
+    $articles =['learn php', 'learn laravel' ,'learn js', 'learn vuejs'];
+    return view('about-me', compact('name', 'job', 'articles'));
 });
