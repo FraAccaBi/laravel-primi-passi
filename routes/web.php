@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', function () {
-    return view('home');
+    $navbar = ['Home', 'About Me', 'Contacts'];
+    
+    return view('home', compact ('navbar'));
 });
 
 Route::get('/about-me', function () {
@@ -23,3 +25,4 @@ Route::get('/about-me', function () {
     $articles =['learn php', 'learn laravel' ,'learn js', 'learn vuejs'];
     return view('about-me', compact('name', 'job', 'articles'));
 });
+
